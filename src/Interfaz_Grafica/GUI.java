@@ -12,6 +12,7 @@ public class GUI extends javax.swing.JFrame {
 
     public GUI() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

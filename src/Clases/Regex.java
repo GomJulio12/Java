@@ -12,7 +12,7 @@ public class Regex {
      Pattern[] Patron = new Pattern[15];
 
     public Regex() {
-        Patron[0] = Pattern.compile("(float|int|double|char|String|for|if|while|else|then|print)"); //Palabras Reservadas
+        Patron[0] = Pattern.compile("(float|int|double|char|String|for|if|while|else|then|println|print)"); //Palabras Reservadas
         Patron[1] = Pattern.compile("([a-zA-Z]|_)([a-zA-Z]|_|[0-9])*");      //Variables ([a-zA-Z]|_)([a-zA-Z]|_|[0-9])*
         Patron[2] = Pattern.compile("[\\+|\\-]?\\d+\\.\\d+");                          //Numero Decimal
         Patron[3] = Pattern.compile("[0-9]+");                               //Numero Entero
@@ -21,12 +21,12 @@ public class Regex {
         Patron[6] = Pattern.compile("\\={1}");                                  //Asignacion
         Patron[7] = Pattern.compile("\\(");                                 //Parentesis Izquierdo
         Patron[8] = Pattern.compile("\\)");                                  //Parentesis Derecho
-        Patron[9] = Pattern.compile("\\>\\<\\<=\\>=\\!=\\==");               //Operadores Relacionales
+        Patron[9] = Pattern.compile("\\>|\\<|\\<=|\\>=|\\!=|\\={2}");               //Operadores Relacionales
         Patron[10] = Pattern.compile("\\{");                                   //Llave Izquierda
         Patron[11] = Pattern.compile("\\}");    //Llave Derecha
         Patron[12] = Pattern.compile("\\+{2}");   //Incrementos
-        Patron[13] = Pattern.compile("\\+ |\\- |\\/ |\\*"); //Operadores Aritmeticos
-        Patron[14] = Pattern.compile("\\(\"\\.\"\\)");      //Cadenas (No funciona Corregir)
+        Patron[13] = Pattern.compile("\\+|\\-|\\/|\\*"); //Operadores Aritmeticos
+        Patron[14] = Pattern.compile("\"[^\"]*\"");      //Cadenas 
     }
     
     public boolean Reconocer (String Texto, int iniToken, int[] i, int noAuto){
